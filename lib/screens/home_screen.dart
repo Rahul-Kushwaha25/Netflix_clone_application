@@ -48,6 +48,7 @@ class _home_screenState extends State<home_screen> {
             FutureBuilder<TvSeriesModel>(
               future: tvseriesFuture,
               builder: (context, snapshot) {
+                
                 if (snapshot.hasData) {
                   return Carousal_sliding(data: snapshot.data!);
                 }

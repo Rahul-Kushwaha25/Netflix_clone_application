@@ -24,6 +24,11 @@ class UpcomingMovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final futureTouse = upcomingFuture ?? nowplayingFuture;
     return FutureBuilder(future: futureTouse, builder:(context,snapshot){
+      if(snapshot.connectionState==ConnectionState.waiting){
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      }
       if(snapshot.hasData){
         var moviedata;
         if(snapshot.data is NowplayingMovieModel){

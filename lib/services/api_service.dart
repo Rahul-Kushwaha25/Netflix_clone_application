@@ -19,7 +19,6 @@ class api_service {
 
     final response = await Http.get(Uri.parse(url));
     if(response.statusCode==200){
-      log("Success");
       return UpcomingMoviesModel.fromJson(jsonDecode(response.body));
     }
     throw Exception('Failed');
@@ -32,7 +31,6 @@ class api_service {
 
     final response = await Http.get(Uri.parse(url));
     if(response.statusCode==200){
-      log("Success");
       return NowplayingMovieModel.fromJson(jsonDecode(response.body));
     }
     throw Exception('Failed');
@@ -40,12 +38,12 @@ class api_service {
 
   }
   Future<TvSeriesModel> getTvSeries_movies() async {
-    var endpoint = 'tv/popular';
+    var endpoint = 'tv/top_rated';
     final url = "$base_url$endpoint$key";
 
     final response = await Http.get(Uri.parse(url));
     if(response.statusCode==200){
-      log("Success");
+      log("Jai Shree Ram");
       return TvSeriesModel.fromJson(jsonDecode(response.body));
     }
     throw Exception('Failed');

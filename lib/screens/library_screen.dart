@@ -10,6 +10,15 @@ class library_screen extends StatefulWidget {
 class _library_screenState extends State<library_screen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(
+        child: Text("Empty (´•︵•`) ",
+        style: TextStyle(
+          fontSize: 30,
+          color: Colors.grey
+        ),
+        ),
+      ),
+    );
   }
 }
